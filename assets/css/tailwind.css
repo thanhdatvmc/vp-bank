@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: "SVN-Gilroy";
+    src: url(../font/SVN-Gilroy.otf);
+  }
+}
+
+* {
+  animation: render 0.3s ease;
+}
+
+@keyframes render {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.box_scroll {
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .box_scroll::-webkit-scrollbar-track {
+    background-color: #fff0;
+  }
+
+  .box_scroll::-webkit-scrollbar {
+    width: 5px;
+    background-color: #fff0;
+  }
+
+  .box_scroll::-webkit-scrollbar-thumb {
+    background-color: #fff5;
+  }
+
+  .box_text::before {
+    position: absolute;
+    content: "";
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 20px;
+    border: 3px solid red;
+  }
+}
+
+.box_text {
+  position: relative;
+}
+
+.box_text::before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  left: -20px;
+  right: -20px;
+  bottom: -10px;
+  border-radius: 20px;
+  border: 3px solid red;
+}
+
+.box_text-bottom {
+  /* bg-gradient-to-r from-[#002b8b] to-[#b90014] text-white */
+  position: relative;
+}
+
+.box_text-bottom::before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  left: -10px;
+  width: 80px;
+  height: 80px;
+  background: #b90014;
+  z-index: -1;
+}
+
+.box_text-bottom::after {
+  position: absolute;
+  content: "";
+  right: -10px;
+  bottom: -10px;
+  width: 80px;
+  height: 80px;
+  background: #002b8b;
+  z-index: -1;
+}
